@@ -1,0 +1,31 @@
+# Node modules - generated dependencies
+node_modules/
+
+# Webpack build output - usually stored in "dist" or "build"
+dist/
+build/
+
+# Temporary files, cache, and lock files
+*.log
+.cache/
+*.lock
+
+# Environment variables (if using dotenv or similar for environment configs)
+.env
+.env.local
+.env.*.local
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+
+# System files (OS-specific)
+.DS_Store
+Thumbs.db
+
+# Webpack-related files
+.webpack/
+
+
+# generated with GPT.
