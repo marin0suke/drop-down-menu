@@ -1,8 +1,28 @@
 
+.drop-down-menu {
+    position: relative;
+}
+
 .menu-items {
-    display: none;
+    display: none; /* Initially hidden */
+    flex-direction: column; 
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    padding: 10px;
+    border: solid;
+    z-index: 10;
+    min-width: 150px; /* Minimum width for menu */
+    opacity: 0; /* Initially invisible for animation */
+    transform: translateY(-10px); /* Start slightly above for slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .menu-items.visible { 
-    display: block;
+    display: flex;
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Slide down into place */
 }
+
+
+

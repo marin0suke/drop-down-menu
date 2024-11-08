@@ -1,7 +1,12 @@
-import dropDownMenu from "./dropDownMenu";
+import createDropdown from "./dropDownMenu";
+import "./styles.css";
 
-function initialize() {
-    return dropDownMenu();
-}
+function setupDropdowns() {
+    document.querySelectorAll("[data-dropdown]").forEach(dropdownElement => {
+        createDropdown(dropdownElement);
+    });
+};
 
-initialize();
+// practice using custom attributes for selecting for JS functionality instead of classes.
+
+document.addEventListener("DOMContentLoaded", setupDropdowns);

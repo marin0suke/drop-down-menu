@@ -1,19 +1,27 @@
 
-export function dropDownMenu() {
-    //logic for drop down here.
-    const menu = document.querySelector(".drop-down-button");
-    menu.addEventListener("click", () => {
-        const menuItems = document.querySelector(".menu-items");
 
-        toggleDropDown
-    })
+function createDropdown(dropdownElement) { // factory for smaller app/function. naming verb since factory?
+    const menu = dropdownElement.querySelector(".menu-items");
+    const toggleButton = dropdownElement.querySelector(".drop-down-button");
+
+    function toggleDropdown() {
+        menu.classList.toggle("visible");
+    }
+
+    function hideDropdown() {
+        menu.classList.remove("visible");
+    }
+
+    toggleButton.addEventListener("click", toggleDropdown); // toggle button toggles menu.
+    menu.addEventListener("mouseleave", hideDropdown); // when mouse leave visible menu, triggers hideDropdown.
     
-    // set up event listener for the menu.
+    return { // expose inner functions for testing if needed.
+        toggleDropdown,
+        hideDropdown
+    };
 
 };
 
-//toggle function for button. 
+export default createDropdown;
 
-function toggleDropDown(element) {
-    return element.display
-}
+
